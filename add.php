@@ -72,7 +72,7 @@ if(count($err)>0)
 }
 ?>
 <form action="" method="post">
-<table width="500" border="1" align="center">
+<table width="900" border="1" align="center">
 	   <tr>
 	   	   <td align="center" colspan="2"><h1>Add Student</h1></td>
 	   </tr>
@@ -91,6 +91,9 @@ if(count($err)>0)
 	   <tr>
 	   	   <td colspan="2" align="center"><input type="submit" name="student_submit" value="Add Student"></td>
 	   </tr>
+	   <tr>
+			<td colspan="9" align="center"><a href="<?=BASE_URL?>">Go Back</a></td>
+		</tr>
 </table>
 
 	</form>
