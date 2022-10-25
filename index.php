@@ -1,5 +1,16 @@
 <?php
 include('config.php');
+
+
+if(isset($_GET['del']))
+{
+	$del_id=$_GET['del'];
+	$query=mysqli_query($conn,"delete from student where student_id=$del_id");
+	if($query)
+	{
+		header('Location:'.BASE_URL.'');
+	}
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,6 +41,9 @@ include('config.php');
 		   <?php
 		   $i=1;
 		   $query=mysqli_query($conn,"select * from student order by student_id desc");
+		   $count=mysqli_num_rows($query);
+		    if($count>0)
+		    {
 		   while($row=mysqli_fetch_array($query))
 		   {
 		   ?>
@@ -41,10 +55,15 @@ include('config.php');
 				<td><?=($row['is_active']==1 ? 'Active' : 'Deactive')?></td>
 				<td><?=date('d-m-Y',strtotime($row['tstp']))?></td>
 				<td><a href="<?=BASE_URL?>view.php?view_id=<?=$row['student_id']?>">View</a></td>
-				<td><a href="#">Edit</a></td>
-				<td><a href="#">Delete</a></td>
+				<td><a href="<?=BASE_URL?>edit.php?edit_id=<?=$row['student_id']?>">Edit</a></td>
+				<td><a href="<?=BASE_URL?>index.php?del=<?=$row['student_id']?>">Delete</a></td>
 		   </tr>
-		<?php $i++;}?>
+		<?php $i++;}}else{?>
+			<tr>
+				<td colspan="9" align="center">No Records Found</td>
+			</tr>
+
+		<?php }?>
 		<tr>
 			<td colspan="9" align="center"><a href="<?=BASE_URL?>add.php">Add Student</a></td>
 		</tr>

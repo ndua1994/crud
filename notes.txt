@@ -1,0 +1,30 @@
+SELECT * FROM `wp_nextend2_image_storage` LIMIT 10
+
+SELECT * FROM `wp_nextend2_image_storage` LIMIT 2,8;
+
+SELECT COUNT(emp_id),emp_country from employee GROUP BY emp_country;
+
+
+alter table employee add foreign key (emp_desg_id) references designation(desg_id) on DELETE CASCADE
+
+select * from wp_options
+
+select option_id,option_name FROM wp_options
+
+select * from wp_options ORDER by option_id desc
+
+SELECT * from wp_options ORDER BY option_name asc
+
+select * from wp_options WHERE option_id BETWEEN 2 and 10
+
+SELECT * from wp_options WHERE option_id IN(2,6,8)
+
+SELECT * from wp_options WHERE option_id NOT IN(2,6,8);
+
+SELECT * from wp_options where option_id=1 and option_name='siteurl'
+
+SELECT * from tbl_emp where emp_name LIKE '%ish%'
+
+SELECT * from tbl_emp where emp_name LIKE 'ish%'
+
+SELECT * from tbl_emp WHERE emp_name LIKE '_ishant'
