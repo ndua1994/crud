@@ -28,3 +28,44 @@ SELECT * from tbl_emp where emp_name LIKE '%ish%'
 SELECT * from tbl_emp where emp_name LIKE 'ish%'
 
 SELECT * from tbl_emp WHERE emp_name LIKE '_ishant'
+
+SELECT concat(emp_name,emp_country) from employee
+
+SELECT concat(emp_name,emp_country) as new_record from employee;
+
+SELECT emp_name,emp_country,concat(emp_name,'-',emp_country) as new_record from employee;
+
+SELECT COUNT(*) from employee
+
+SELECT COUNT(*) as total_employee from employee
+
+SELECT COUNT(*) as indian_employees from employee WHERE emp_country='india'
+
+SELECT MAX(emp_id) as max_emp_id from employee
+
+SELECT MIN(emp_id) as min_emp_id from employee
+
+SELECT SUM(emp_id) as max_emp_id from employee
+
+SELECT AVG(emp_id) as avg_emp_id from employee
+
+SELECT emp_name,emp_country,ucase(emp_name)as uppercase_emp from employee
+
+SELECT emp_name,emp_country,lcase(emp_name)as lowercase_emp from employee
+
+SELECT emp_name,length(emp_name) as emp_length from employee
+
+SELECT curdate()
+
+SELECT curtime()
+
+ALTER TABLE employee ADD emp_gender varchar(255)
+
+ALTER TABLE employee DROP emp_gender
+
+RENAME TABLE employee to employee_new
+
+INSERT into employee(emp_name,emp_country,emp_desg_id)
+VALUES ('arun','india',1),
+('jayant','india',1),
+('alex','england',1)
