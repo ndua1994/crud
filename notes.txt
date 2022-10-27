@@ -69,3 +69,14 @@ INSERT into employee(emp_name,emp_country,emp_desg_id)
 VALUES ('arun','india',1),
 ('jayant','india',1),
 ('alex','england',1)
+
+
+SELECT employee.emp_name,employee.emp_country,designation.desg_name FROM employee LEFT JOIN designation ON employee.emp_desg_id=designation.desg_id;
+
+
+SELECT employee.emp_name,employee.emp_country,designation.desg_name FROM employee RIGHT JOIN designation ON employee.emp_desg_id=designation.desg_id;
+
+
+SELECT stud_name,stud_gender from student_1 UNION SELECT stud_name,stud_gender from student_2;
+
+SELECT emp_name,emp_age FROM tbl_emp GROUP BY emp_name HAVING emp_age>25
