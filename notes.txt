@@ -80,3 +80,12 @@ SELECT employee.emp_name,employee.emp_country,designation.desg_name FROM employe
 SELECT stud_name,stud_gender from student_1 UNION SELECT stud_name,stud_gender from student_2;
 
 SELECT emp_name,emp_age FROM tbl_emp GROUP BY emp_name HAVING emp_age>25
+
+
+ALTER TABLE student ADD FOREIGN KEY(schl_id) REFERENCES school(schl_id) ON DELETE CASCADE
+
+SELECT name FROM person_tbl WHERE name REGEXP '^st';
+
+SELECT FirstName FROM intque.person_tbl WHERE FirstName REGEXP '^[aeiou].*ok$';
+
+SELECT emp_name FROM tbl_emp WHERE emp_name REGEXP '^ta';
